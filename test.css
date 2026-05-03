@@ -133,31 +133,29 @@ input[type="range"]::-webkit-slider-thumb {
 /* --- MEDIA QUERIES (AJUSTE PARA MÓVIL) --- */
 @media screen and (max-width: 600px) {
     .container {
-        padding: 20px 15px; /* Reducimos el margen lateral en móvil */
-        border-left: none;  /* Quitamos bordes para aprovechar pantalla */
+        padding: 20px 10px;
+        border-left: none;
         border-right: none;
     }
 
-    h1 {
-        font-size: 20px;
-    }
-
     .pregunta p {
-        font-size: 16px; /* Texto un poco más pequeño para que no ocupe tanto */
+        font-size: 15px; /* Texto un poco más pequeño para ahorrar espacio */
+        padding: 0 5px;
     }
 
     .rango-container {
-        flex-direction: column; /* Apilamos las etiquetas sobre el slider */
-        gap: 8px;
+        flex-direction: row; /* FORZAMOS que se mantenga de lado */
+        gap: 10px;
     }
 
     .label-rango {
-        width: 100%;
-        font-size: 10px;
+        width: 70px; /* Reducimos el ancho de las etiquetas */
+        font-size: 9px; /* Fuente más pequeña para que no haga saltos de línea */
+        line-height: 1;
     }
 
     #rol-final {
-        font-size: 24px; /* Título de resultado más pequeño para que no se corte */
-        padding: 10px 15px;
+        font-size: 22px;
+        padding: 10px 12px;
     }
 }
