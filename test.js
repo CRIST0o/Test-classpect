@@ -1,20 +1,20 @@
 // 1. CONFIGURACIÓN DE LOS 24 ÍTEMS (Clases y Aspectos)
 const items = {
     // ACTIVAS (Pesos: Witch, Prince, Thief valen x2 para Lord/Muse)
-    "Witch":  { preguntas: [1, 2, 3, 4], puntos: 0, tipo: "activa", peso: 2 },
-    "Prince": { preguntas: [5, 6, 7, 8], puntos: 0, tipo: "activa", peso: 2 },
-    "Thief":  { preguntas: [9, 10, 11, 12], puntos: 0, tipo: "activa", peso: 2 },
-    "Knight": { preguntas: [13, 14, 15, 16], puntos: 0, tipo: "activa", peso: 1 },
-    "Mage":   { preguntas: [17, 18, 19, 20], puntos: 0, tipo: "activa", peso: 1 },
+    "Witch":  { preguntas: [1, 2, 3, 4], puntos: 0, tipo: "activa", peso: 6 },
+    "Prince": { preguntas: [5, 6, 7, 8], puntos: 0, tipo: "activa", peso: 5 },
+    "Thief":  { preguntas: [9, 10, 11, 12], puntos: 0, tipo: "activa", peso: 4 },
+    "Knight": { preguntas: [13, 14, 15, 16], puntos: 0, tipo: "activa", peso: 3 },
+    "Mage":   { preguntas: [17, 18, 19, 20], puntos: 0, tipo: "activa", peso: 2 },
     "Sylph":  { preguntas: [21, 22, 23, 24], puntos: 0, tipo: "activa", peso: 1 },
 
     // PASIVAS (Pesos: Heir, Bard, Rogue valen x2 para Lord/Muse)
-    "Heir":   { preguntas: [25, 26, 27, 28], puntos: 0, tipo: "pasiva", peso: 2 },
-    "Bard":   { preguntas: [29, 30, 31, 32], puntos: 0, tipo: "pasiva", peso: 2 },
-    "Rogue":  { preguntas: [33, 34, 35, 36], puntos: 0, tipo: "pasiva", peso: 2 },
+    "Heir":   { preguntas: [25, 26, 27, 28], puntos: 0, tipo: "pasiva", peso: 6 },
+    "Bard":   { preguntas: [29, 30, 31, 32], puntos: 0, tipo: "pasiva", peso: 5 },
+    "Rogue":  { preguntas: [33, 34, 35, 36], puntos: 0, tipo: "pasiva", peso: 4 },
+    "Page":   { preguntas: [45, 46, 47, 48], puntos: 0, tipo: "pasiva", peso: 3 },
+    "Seer":   { preguntas: [41, 42, 43, 44], puntos: 0, tipo: "pasiva", peso: 2 },
     "Maid":   { preguntas: [37, 38, 39, 40], puntos: 0, tipo: "pasiva", peso: 1 },
-    "Seer":   { preguntas: [41, 42, 43, 44], puntos: 0, tipo: "pasiva", peso: 1 },
-    "Page":   { preguntas: [45, 46, 47, 48], puntos: 0, tipo: "pasiva", peso: 1 },
 
     // ASPECTOS (Suma normal, sin peso)
     "Light":  { preguntas: [49, 50, 51, 52], puntos: 0, tipo: "aspecto" },
@@ -72,94 +72,158 @@ function mezclarArray(array) {
     return array;
 }
 
-// 4. GENERAR EL HTML DE LAS PREGUNTAS
 function generarPreguntas() {
     const container = document.getElementById('quiz-container');
     if (!container) return;
-    
-    let indices = Array.from(Array(96).keys());
-    indices = mezclarArray(indices);
-    
+    let indices = mezclarArray(Array.from(Array(96).keys()));
     let htmlTotal = "";
 
     indices.forEach((idReal, iVisual) => {
-        const numParaID = idReal + 1;
-        const numeroLista = iVisual + 1;
-        const texto = misPreguntas[idReal] || `Pregunta para el ítem correspondiente #${numParaID}`;
-htmlTotal += `
-    <div class="pregunta">
-        <p><strong>${numeroLista}.</strong> ${texto}</p>
-        <div class="rango-container">
-            <span class="label-rango">Totalmente en desacuerdo</span>
-            <input type="range" id="q${numParaID}" min="0" max="10" value="5">
-            <span class="label-rango">Totalmente de acuerdo</span>
-        </div>
-    </div>`;
+        const qID = idReal + 1;
+        htmlTotal += `
+            <div class="pregunta">
+                <p><strong>${iVisual + 1}.</strong> ${misPreguntas[idReal]}</p>
+                <div class="opciones-likert">
+                    <span class="label-rango" style="color: #33a474;">De acuerdo</span>
+                    
+                    <label><input type="radio" name="q${qID}" value="10" class="iv5"><span class="circulo v5"></span></label>
+                    <label><input type="radio" name="q${qID}" value="9" class="iv4"><span class="circulo v4"></span></label>
+                    <label><input type="radio" name="q${qID}" value="8" class="iv3"><span class="circulo v3"></span></label>
+                    <label><input type="radio" name="q${qID}" value="7" class="iv2"><span class="circulo v2"></span></label>
+                    <label><input type="radio" name="q${qID}" value="6" class="iv1"><span class="circulo v1"></span></label>
+                    
+                    <label><input type="radio" name="q${qID}" value="5" class="in" checked><span class="circulo neutro"></span></label>
+                    
+                    <label><input type="radio" name="q${qID}" value="4" class="ip1"><span class="circulo p1"></span></label>
+                    <label><input type="radio" name="q${qID}" value="3" class="ip2"><span class="circulo p2"></span></label>
+                    <label><input type="radio" name="q${qID}" value="2" class="ip3"><span class="circulo p3"></span></label>
+                    <label><input type="radio" name="q${qID}" value="1" class="ip4"><span class="circulo p4"></span></label>
+                    <label><input type="radio" name="q${qID}" value="0" class="ip5"><span class="circulo p5"></span></label>
+
+                    <span class="label-rango" style="color: #885e9e;">En desacuerdo</span>
+                </div>
+            </div>`;
     });
     container.innerHTML = htmlTotal;
+}
+
+// Asegúrate de que el botón en tu HTML tenga: onclick="ejecutarAscenso()"
+function ejecutarAscenso() {
+    const btn = document.getElementById('btn-ascender');
+    btn.classList.add('visitado'); // Esto lo vuelve morado permanentemente
+    calcularClasspect();
+}
+
+// ... (Tus items y preguntas se mantienen igual)
+
+function generarPreguntas() {
+    const container = document.getElementById('quiz-container');
+    if (!container) return;
+    let indices = mezclarArray(Array.from(Array(96).keys()));
+    let htmlTotal = "";
+
+    indices.forEach((idReal, iVisual) => {
+        const qID = idReal + 1;
+        htmlTotal += `
+            <div class="pregunta">
+                <p><strong>${iVisual + 1}.</strong> ${misPreguntas[idReal]}</p>
+                <div class="opciones-likert">
+                    <span class="label-rango" style="color: #33a474;">De acuerdo</span>
+                    <label><input type="radio" name="q${qID}" value="10" class="iv5"><span class="circulo v5"></span></label>
+                    <label><input type="radio" name="q${qID}" value="9" class="iv4"><span class="circulo v4"></span></label>
+                    <label><input type="radio" name="q${qID}" value="8" class="iv3"><span class="circulo v3"></span></label>
+                    <label><input type="radio" name="q${qID}" value="7" class="iv2"><span class="circulo v2"></span></label>
+                    <label><input type="radio" name="q${qID}" value="6" class="iv1"><span class="circulo v1"></span></label>
+                    <label><input type="radio" name="q${qID}" value="5" class="in" checked><span class="circulo neutro"></span></label>
+                    <label><input type="radio" name="q${qID}" value="4" class="ip1"><span class="circulo p1"></span></label>
+                    <label><input type="radio" name="q${qID}" value="3" class="ip2"><span class="circulo p2"></span></label>
+                    <label><input type="radio" name="q${qID}" value="2" class="ip3"><span class="circulo p3"></span></label>
+                    <label><input type="radio" name="q${qID}" value="1" class="ip4"><span class="circulo p4"></span></label>
+                    <label><input type="radio" name="q${qID}" value="0" class="ip5"><span class="circulo p5"></span></label>
+                    <span class="label-rango" style="color: #885e9e;">En desacuerdo</span>
+                </div>
+            </div>`;
+    });
+    container.innerHTML = htmlTotal;
+}
+
+function ejecutarAscenso() {
+    const btn = document.getElementById('btn-ascender');
+    if(btn) btn.classList.add('visitado'); 
+    calcularClasspect();
 }
 
 function calcularClasspect() {
     for (let key in items) { items[key].puntos = 0; }
 
-    for (let key in items) {
-        if (items[key].preguntas) {
-            items[key].preguntas.forEach(num => {
-                const el = document.getElementById(`q${num}`);
-                if (el) items[key].puntos += parseInt(el.value);
-            });
+    let totalActivo = 0;
+    let totalPasivo = 0;
+
+    for (let i = 1; i <= 96; i++) {
+        const seleccionado = document.querySelector(`input[name="q${i}"]:checked`);
+        if (seleccionado) {
+            const valor = parseInt(seleccionado.value);
+            for (let key in items) {
+                if (items[key].preguntas.includes(i)) {
+                    items[key].puntos += valor;
+                    if (items[key].tipo === "activa") totalActivo += valor;
+                    if (items[key].tipo === "pasiva") totalPasivo += valor;
+                }
+            }
         }
     }
 
-    const filtro = document.getElementById('gender-filter').value;
-    const excluidasFemeninas = ["Witch", "Maid", "Sylph", "Muse"];
-    const excluidasMasculinas = ["Prince", "Bard", "Heir", "Lord"];
-
-    let maxC = -1; let ganC = "";
-    let maxA = -1; let ganA = "";
-    let actP = 0; let pasP = 0;
+    // CORRECCIÓN AQUÍ: ganClase unido, sin espacios
+    let ganClase = "";
+    let maxClase = -1;
+    let ganAspecto = "";
+    let maxAspecto = -1;
 
     for (let key in items) {
-        const it = items[key];
-        let esClaseBloqueada = (filtro === "masculine" && excluidasFemeninas.includes(key)) || 
-                               (filtro === "feminine" && excluidasMasculinas.includes(key));
-
-        if (it.tipo === "activa" || it.tipo === "pasiva") {
-            if (!esClaseBloqueada && it.puntos > maxC) { maxC = it.puntos; ganC = key; }
-            if (it.tipo === "activa") actP += (it.puntos * it.peso);
-            if (it.tipo === "pasiva") pasP += (it.puntos * it.peso);
-        } else if (it.tipo === "aspecto") {
-            if (it.puntos > maxA) { maxA = it.puntos; ganA = key; }
+        if (items[key].tipo !== "aspecto") {
+            if (items[key].puntos > maxClase) { 
+                maxClase = items[key].puntos; 
+                ganClase = key; 
+            }
+        } else {
+            if (items[key].puntos > maxAspecto) { 
+                maxAspecto = items[key].puntos; 
+                ganAspecto = key; 
+            }
         }
     }
 
-    let titulo = `${ganC} of ${ganA}`;
-    if (actP >= (pasP * 2) && (filtro === "all" || filtro === "masculine")) titulo = `Lord of ${ganA}`;
-    else if (pasP >= (actP * 2) && (filtro === "all" || filtro === "feminine")) titulo = `Muse of ${ganA}`;
-
-    // Llamamos a la función con el orden correcto
-    mostrarResultados(titulo, ganA, actP, pasP);
+    mostrarResultados(`${ganClase} of ${ganAspecto}`, ganAspecto, totalActivo, totalPasivo);
 }
 
-// CORRECCIÓN: Quitamos el ";" y sincronizamos nombres de variables
 function mostrarResultados(rol, aspecto, act, pas) {
     const box = document.getElementById('resultado-box');
     if (!box) return;
     
+    // 1. Mostrar la caja de resultados
     box.style.display = "block";
+    box.className = ""; 
+    box.classList.add(`res-${aspecto.toLowerCase()}`);
     
-    // El color se basa en el aspecto ganado (ganA)
-    box.className = `res-${aspecto.toLowerCase()}`;
-    
-    // El título (ej: "Witch of Light")
+    // 2. Insertar el nombre del Classpect
     document.getElementById('rol-final').innerText = rol;
 
-    // Los puntos de balance numéricos
-    document.getElementById('detalles-puntos').innerHTML = `
-        <p>Balance Activo/Pasivo: Act ${act} | Pas ${pas}</p>
-    `;
+    // 3. Actualizar el balance de puntos
+    const detalles = document.getElementById('detalles-puntos');
+    if (detalles) {
+        detalles.innerHTML = `<p id="balance-texto">Balance Activo/Pasivo: Act ${act} | Pas ${pas}</p>`;
+    }
+
+    // --- EL CAMBIO PARA EL BOTÓN ---
+    // 4. Buscamos el botón y le añadimos la clase 'visitado' para que pase a morado
+    const boton = document.getElementById('btn-ascender');
+    if (boton) {
+        boton.classList.add('visitado');
+    }
+    // -------------------------------
     
+    // 5. Scroll suave hacia el resultado
     window.scrollTo({ top: box.offsetTop - 50, behavior: 'smooth' });
 }
-
+// Iniciar
 generarPreguntas();
