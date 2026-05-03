@@ -10,7 +10,7 @@ body {
 h1 {
     background-color: #ffffff;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px 10px;
     max-width: 950px;
     border-bottom: 2px solid #000000;
     font-size: 24px;
@@ -22,13 +22,14 @@ h1 {
     max-width: 650px;
     margin: 0 auto;
     background-color: #eeeeee;
-    padding: 40px 60px;
+    padding: 40px 60px; /* Padding para escritorio */
     border-left: 2px solid #000000;
     border-right: 2px solid #000000;
     min-height: 100vh;
+    box-sizing: border-box; /* Evita que el padding rompa el ancho */
 }
 
-/* --- Preguntas (Sin números visibles) --- */
+/* --- Preguntas --- */
 .pregunta {
     margin-bottom: 50px;
     text-align: center;
@@ -99,35 +100,23 @@ input[type="range"]::-webkit-slider-thumb {
 /* --- RESULTADOS: ESTILO BADGE REDONDEADO --- */
 #resultado-box {
     margin-top: 50px;
-    padding: 40px 20px;
+    padding: 40px 10px;
     display: none;
     text-align: center;
     border-top: 2px dashed #000000;
-}
-
-#resultado-box h2 { 
-    color: #000000; 
-    font-size: 16px;
-    margin-bottom: 15px;
 }
 
 #rol-final { 
     font-size: 32px; 
     font-weight: bold; 
     margin: 20px auto;
-    display: inline-block; /* Para que el fondo rodee solo el texto */
-    padding: 12px 30px;
-    border-radius: 20px; /* Esquinas redondeadas */
+    display: inline-block; 
+    padding: 12px 25px;
+    border-radius: 20px; 
+    line-height: 1.2;
 }
 
-#detalles-puntos { 
-    color: #666666; 
-    font-size: 13px; 
-    margin-top: 25px;
-}
-
-/* --- TUS COLORES APLICADOS AL RELLENO --- */
-
+/* --- TUS COLORES --- */
 .res-space #rol-final  { color: #ffffff; background-color: #000000; }
 .res-time #rol-final   { color: #ff2106; background-color: #b70d0e; }
 .res-light #rol-final  { color: #f6fa4e; background-color: #f0840c; }
@@ -138,5 +127,37 @@ input[type="range"]::-webkit-slider-thumb {
 .res-rage #rol-final   { color: #9c4dad; background-color: #520c61; }
 .res-life #rol-final   { color: #72eb34; background-color: #a49787; }
 .res-doom #rol-final   { color: #000000; background-color: #306800; }
-.res-mind #rol-final   { color: #06ffc9; background-color: #00923d; } 
-.res-heart #rol-final  { color: #bd1864; background-color: #55142a; }
+.res-mind #rol-final   { color: #ffffff; background-color: #008754; } 
+.res-heart #rol-final  { color: #bd1864; background-color: #ff98c5; }
+
+/* --- MEDIA QUERIES (AJUSTE PARA MÓVIL) --- */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 20px 15px; /* Reducimos el margen lateral en móvil */
+        border-left: none;  /* Quitamos bordes para aprovechar pantalla */
+        border-right: none;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .pregunta p {
+        font-size: 16px; /* Texto un poco más pequeño para que no ocupe tanto */
+    }
+
+    .rango-container {
+        flex-direction: column; /* Apilamos las etiquetas sobre el slider */
+        gap: 8px;
+    }
+
+    .label-rango {
+        width: 100%;
+        font-size: 10px;
+    }
+
+    #rol-final {
+        font-size: 24px; /* Título de resultado más pequeño para que no se corte */
+        padding: 10px 15px;
+    }
+}
