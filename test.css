@@ -1,4 +1,29 @@
-/* --- ESTÉTICA RETRO MSPA (Homestuck 2009) --- */
+/* --- CONFIGURACIÓN GLOBAL DEL CURSOR --- */
+
+/* El selector '*' aplica a absolutamente todo (texto, divs, fondo) */
+* {
+    cursor: url('pointer2.png'), auto;
+    /* Evita que el navegador suavice los bordes del cursor */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Cambiamos a la mano solo en elementos con los que se puede interactuar */
+button, 
+a, 
+.circulo, 
+#btn-ascender, 
+#btn-ascender span,
+select,
+input[type="radio"] + .circulo {
+    /* Usamos 5 0 para que el clic sea en la punta del dedo índice */
+    cursor: url('pointer1.png') 5 0, pointer !important;
+}
+
+/* Evita que el cursor cambie a la barra de texto al pasar sobre las preguntas */
+p, span, h1, .label-rango {
+    cursor: url('pointer2.png'), auto;
+}
 body {
     font-family: "Courier New", Courier, monospace;
     background-color: #333333;
@@ -22,82 +47,168 @@ h1 {
     max-width: 650px;
     margin: 0 auto;
     background-color: #eeeeee;
-    padding: 40px 60px; /* Padding para escritorio */
+    padding: 40px 60px;
     border-left: 2px solid #000000;
     border-right: 2px solid #000000;
     min-height: 100vh;
-    box-sizing: border-box; /* Evita que el padding rompa el ancho */
+    box-sizing: border-box;
 }
 
-/* --- Preguntas --- */
+/* --- CONFIGURACIÓN --- */
+.config-box {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+}
+
+/* --- PREGUNTAS --- */
 .pregunta {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     text-align: center;
 }
 
 .pregunta p {
     font-size: 18px; 
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    line-height: 1.3;
 }
+/* --- LIKERT ESTILO MSPA PURO CON COLORES PERSONALIZADOS --- */
 
-.rango-container {
+/* --- LIKERT DEFinitivo: ESPIRALES Y COLORES --- */
+
+.opciones-likert {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 15px;
-    padding-bottom: 10px;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
 }
 
+/* Ocultar radio original */
+.opciones-likert input[type="radio"] {
+    display: none;
+}
+
+/* Base del círculo: SIN bordes, SOLO espiral */
+.circulo {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: none;
+    border: none !important;
+    box-shadow: none !important;
+    /* ... lo que ya tienes ... */
+    image-rendering: -webkit-optimize-contrast; /* Para Chrome/Edge modernos */
+    backface-visibility: hidden; /* Truco para forzar renderizado por GPU */
+    transform: translateZ(0); /* Obliga a la tarjeta de video a dibujar el círculo */
+    background-size: 85% 85%; /* En lugar de contain, deja un pequeño aire alrededor */
+    background-position: center;
+}
+/* --- ESTADO NO SELECCIONADO (Muestra el espiral) --- */
+/* Lado Verde (#18e700) */
+.v5, .v4, .v3, .v2, .v1 { background-image: url('espiral-v.png'); opacity: 0.7; }
+/* Lado Rojo (#fd0000) */
+.p1, .p2, .p3, .p4, .p5 { background-image: url('espiral-r.png'); opacity: 0.7; }
+/* Neutro */
+.neutro { background-image: url('espiral-g.png'); opacity: 0.5; }
+
+/* Tamaños */
+.v5, .p5 { width: 34px; height: 34px; }
+.v4, .p4 { width: 28px; height: 28px; }
+.v3, .p3 { width: 22px; height: 22px; }
+.v2, .p2 { width: 18px; height: 18px; }
+.v1, .p1 { width: 14px; height: 14px; }
+.neutro   { width: 12px; height: 12px; }
+
+/* --- ESTADO SELECCIONADO (Se vuelve círculo sólido) --- */
+input[type="radio"]:checked + .circulo {
+    background-image: none !important;
+    opacity: 1;
+}
+
+/* Colores sólidos al marcar */
+input[type="radio"][class^="iv"]:checked + .circulo { background-color: #18e700; }
+input[type="radio"][class^="ip"]:checked + .circulo { background-color: #fd0000; }
+input[type="radio"].in:checked + .circulo { background-color: #999999; }
+
+/* --- ETIQUETAS DE TEXTO --- */
 .label-rango {
-    font-size: 11px;
-    width: 120px;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100px;
     text-align: center;
-    color: #666666;
+    text-transform: uppercase;
+    user-select: none;
 }
 
-input[type="range"] {
-    flex-grow: 1;
-    -webkit-appearance: none;
-    background: transparent;
+/* Colores forzados para los textos */
+.opciones-likert .label-rango:first-of-type {
+    color: #18e700 !important;
+}
+.opciones-likert .label-rango:last-of-type {
+    color: #fd0000 !important;
+}
+/* --- SCROLLBAR ESTILO RETRO --- */
+/* Tamaño de la barra */
+::-webkit-scrollbar {
+    width: 12px;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 8px;
-    background: #ffffff;
-    border: 1px solid #000000;
+/* Fondo de la barra (el track) */
+::-webkit-scrollbar-track {
+    background: #333333; 
+    border-left: 2px solid #000000;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-    height: 18px;
-    width: 10px;
-    background: #000000;
-    -webkit-appearance: none;
-    margin-top: -6px;
-    border: 1px solid #000000;
-    cursor: pointer;
+/* La pieza que se mueve (el thumb) */
+::-webkit-scrollbar-thumb {
+    background: #eeeeee;
+    border: 2px solid #000000;
 }
 
-/* --- Botón Comando --- */
+::-webkit-scrollbar-thumb:hover {
+    background: #cccccc;
+}
+/* --- BOTÓN COMANDO --- */
+/* --- BOTÓN COMANDO (ASCENDER.) --- */
+/* --- BOTÓN COMANDO (ASCENDER.) --- */
 #btn-ascender {
     display: block;
     width: fit-content;
     margin: 50px auto;
     background: transparent;
-    color: #0000ff;
     border: none;
-    font-family: "Courier New", monospace;
-    font-size: 18px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 19px;
     font-weight: bold;
-    text-decoration: underline;
-    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
 }
 
-#btn-ascender::before { content: "> "; color: #000; text-decoration: none; }
-#btn-ascender::after { content: "."; text-decoration: none; }
+/* Color base: Siempre Azul */
+#btn-ascender span {
+    color: #0000ff; 
+    text-decoration: underline;
+    text-transform: uppercase;
+}
 
-/* --- RESULTADOS: ESTILO BADGE REDONDEADO --- */
+#btn-ascender::before { 
+    content: "> "; 
+    color: #000000; 
+}
+
+/* CLASE ACTIVA: Solo se aplica cuando el JS lo ordena */
+/* Usamos !important para asegurar que sobreescriba el azul inicial */
+#btn-ascender.visitado span {
+    color: #551a8b !important; 
+}
+/* --- RESULTADOS --- */
 #resultado-box {
     margin-top: 50px;
     padding: 40px 10px;
@@ -116,7 +227,7 @@ input[type="range"]::-webkit-slider-thumb {
     line-height: 1.2;
 }
 
-/* --- TUS COLORES --- */
+/* --- COLORES DE ASPECTOS --- */
 .res-space #rol-final  { color: #ffffff; background-color: #000000; }
 .res-time #rol-final   { color: #ff2106; background-color: #b70d0e; }
 .res-light #rol-final  { color: #f6fa4e; background-color: #f0840c; }
@@ -130,7 +241,32 @@ input[type="range"]::-webkit-slider-thumb {
 .res-mind #rol-final   { color: #ffffff; background-color: #008754; } 
 .res-heart #rol-final  { color: #bd1864; background-color: #ff98c5; }
 
-/* --- MEDIA QUERIES (AJUSTE PARA MÓVIL) --- */
+/* --- LIKERT CON ETIQUETAS LATERALES --- */
+.opciones-likert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Un poco más de espacio para respirar */
+    margin-top: 20px;
+}
+.opciones-likert .label-rango:first-of-type {
+    color: #18e700 !important;
+}
+
+/* Seleccionamos específicamente el último label (derecha) */
+.opciones-likert .label-rango:last-of-type {
+    color: #fd0000 !important;
+}
+.label-rango {
+    font-size: 12px;
+    font-weight: bold;
+    width: 100px; /* Ancho fijo para que los círculos queden siempre centrados */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- MEDIA QUERIES (ARREGLO PARA MÓVIL) --- */
 @media screen and (max-width: 600px) {
     .container {
         padding: 20px 10px;
@@ -139,23 +275,35 @@ input[type="range"]::-webkit-slider-thumb {
     }
 
     .pregunta p {
-        font-size: 15px; /* Texto un poco más pequeño para ahorrar espacio */
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    /* Cambiamos a Wrap para que los labels tengan su propia fila */
+    .opciones-likert {
+        flex-wrap: wrap; 
+        justify-content: space-between;
+        gap: 10px 4px; /* 10px de espacio arriba/abajo, 4px entre círculos */
         padding: 0 5px;
     }
 
-    .rango-container {
-        flex-direction: row; /* FORZAMOS que se mantenga de lado */
-        gap: 10px;
-    }
-
+    /* Forzamos a los labels a ocupar el 50% para que queden arriba de los círculos */
     .label-rango {
-        width: 70px; /* Reducimos el ancho de las etiquetas */
-        font-size: 9px; /* Fuente más pequeña para que no haga saltos de línea */
-        line-height: 1;
+        width: 45%; 
+        font-size: 10px;
+        margin-bottom: 5px;
+        order: -1; /* Esto los empuja hacia arriba de los inputs */
     }
 
-    #rol-final {
-        font-size: 22px;
-        padding: 10px 12px;
-    }
+    /* Alineamos los textos a sus respectivos lados */
+    .label-rango:first-child { text-align: left; }
+    .label-rango:last-child { text-align: right; }
+
+    /* Reducimos un poco más los círculos para asegurar que los 11 quepan */
+    .v5, .p5 { width: 28px; height: 28px; }
+    .v4, .p4 { width: 24px; height: 24px; }
+    .v3, .p3 { width: 20px; height: 20px; }
+    .v2, .p2 { width: 16px; height: 16px; }
+    .v1, .p1 { width: 12px; height: 12px; }
+    .neutro { width: 10px; height: 10px; }
 }
