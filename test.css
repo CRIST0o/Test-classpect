@@ -1,0 +1,142 @@
+/* --- ESTÉTICA RETRO MSPA (Homestuck 2009) --- */
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #333333;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 950px;
+    border-bottom: 2px solid #000000;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: #eeeeee;
+    padding: 40px 60px;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    min-height: 100vh;
+}
+
+/* --- Preguntas (Sin números visibles) --- */
+.pregunta {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.pregunta p {
+    font-size: 18px; 
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.rango-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.label-rango {
+    font-size: 11px;
+    width: 120px;
+    text-align: center;
+    color: #666666;
+}
+
+input[type="range"] {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #ffffff;
+    border: 1px solid #000000;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 18px;
+    width: 10px;
+    background: #000000;
+    -webkit-appearance: none;
+    margin-top: -6px;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+/* --- Botón Comando --- */
+#btn-ascender {
+    display: block;
+    width: fit-content;
+    margin: 50px auto;
+    background: transparent;
+    color: #0000ff;
+    border: none;
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#btn-ascender::before { content: "> "; color: #000; text-decoration: none; }
+#btn-ascender::after { content: "."; text-decoration: none; }
+
+/* --- RESULTADOS: ESTILO BADGE REDONDEADO --- */
+#resultado-box {
+    margin-top: 50px;
+    padding: 40px 20px;
+    display: none;
+    text-align: center;
+    border-top: 2px dashed #000000;
+}
+
+#resultado-box h2 { 
+    color: #000000; 
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#rol-final { 
+    font-size: 32px; 
+    font-weight: bold; 
+    margin: 20px auto;
+    display: inline-block; /* Para que el fondo rodee solo el texto */
+    padding: 12px 30px;
+    border-radius: 20px; /* Esquinas redondeadas */
+}
+
+#detalles-puntos { 
+    color: #666666; 
+    font-size: 13px; 
+    margin-top: 25px;
+}
+
+/* --- TUS COLORES APLICADOS AL RELLENO --- */
+
+.res-space #rol-final  { color: #ffffff; background-color: #000000; }
+.res-time #rol-final   { color: #ff2106; background-color: #b70d0e; }
+.res-light #rol-final  { color: #f6fa4e; background-color: #f0840c; }
+.res-void #rol-final   { color: #001957; background-color: #104ea2; }
+.res-breath #rol-final { color: #47dff9; background-color: #4379e6; }
+.res-blood #rol-final  { color: #ba1016; background-color: #3e1601; }
+.res-hope #rol-final   { color: #fdfdfd; background-color: #ffde55; }
+.res-rage #rol-final   { color: #9c4dad; background-color: #520c61; }
+.res-life #rol-final   { color: #72eb34; background-color: #a49787; }
+.res-doom #rol-final   { color: #000000; background-color: #306800; }
+.res-mind #rol-final   { color: #06ffc9; background-color: #00923d; } 
+.res-heart #rol-final  { color: #bd1864; background-color: #55142a; }
