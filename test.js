@@ -34,21 +34,22 @@ const items = {
 // 2. BANCO DE PREGUNTAS (Escribe tus 96 preguntas aquí)
 const misPreguntas = [
     // CLASES ACTIVAS (1-24)
-    "Pregunta 1 para WITCH (Activa - Peso 2)", "Pregunta 2 para WITCH (Activa - Peso 2)", "Pregunta 3 para WITCH (Activa - Peso 2)", "Pregunta 4 para WITCH (Activa - Peso 2)",
-    "Pregunta 1 para PRINCE (Activa - Peso 2)", "Pregunta 2 para PRINCE (Activa - Peso 2)", "Pregunta 3 para PRINCE (Activa - Peso 2)", "Pregunta 4 para PRINCE (Activa - Peso 2)",
-    "Pregunta 1 para THIEF (Activa - Peso 2)", "Pregunta 2 para THIEF (Activa - Peso 2)", "Pregunta 3 para THIEF (Activa - Peso 2)", "Pregunta 4 para THIEF (Activa - Peso 2)",
-    "Pregunta 1 para KNIGHT (Activa - Peso 1)", "Pregunta 2 para KNIGHT (Activa - Peso 1)", "Pregunta 3 para KNIGHT (Activa - Peso 1)", "Pregunta 4 para KNIGHT (Activa - Peso 1)",
-    "Pregunta 1 para MAGE (Activa - Peso 1)", "Pregunta 2 para MAGE (Activa - Peso 1)", "Pregunta 3 para MAGE (Activa - Peso 1)", "Pregunta 4 para MAGE (Activa - Peso 1)",
+// CLASES ACTIVAS (1-24)
+    "Pregunta 1 para WITCH (Activa - Peso 6)", "Pregunta 2 para WITCH (Activa - Peso 6)", "Pregunta 3 para WITCH (Activa - Peso 6)", "Pregunta 4 para WITCH (Activa - Peso 6)",
+    "Pregunta 1 para PRINCE (Activa - Peso 5)", "Pregunta 2 para PRINCE (Activa - Peso 5)", "Pregunta 3 para PRINCE (Activa - Peso 5)", "Pregunta 4 para PRINCE (Activa - Peso 5)",
+    "Pregunta 1 para THIEF (Activa - Peso 4)", "Pregunta 2 para THIEF (Activa - Peso 4)", "Pregunta 3 para THIEF (Activa - Peso 4)", "Pregunta 4 para THIEF (Activa - Peso 4)",
+    "Pregunta 1 para KNIGHT (Activa - Peso 3)", "Pregunta 2 para KNIGHT (Activa - Peso 3)", "Pregunta 3 para KNIGHT (Activa - Peso 3)", "Pregunta 4 para KNIGHT (Activa - Peso 3)",
+    "Pregunta 1 para MAGE (Activa - Peso 2)", "Pregunta 2 para MAGE (Activa - Peso 2)", "Pregunta 3 para MAGE (Activa - Peso 2)", "Pregunta 4 para MAGE (Activa - Peso 2)",
     "Pregunta 1 para SYLPH (Activa - Peso 1)", "Pregunta 2 para SYLPH (Activa - Peso 1)", "Pregunta 3 para SYLPH (Activa - Peso 1)", "Pregunta 4 para SYLPH (Activa - Peso 1)",
 
     // CLASES PASIVAS (25-48)
-    "Pregunta 1 para HEIR (Pasiva - Peso 2)", "Pregunta 2 para HEIR (Pasiva - Peso 2)", "Pregunta 3 para HEIR (Pasiva - Peso 2)", "Pregunta 4 para HEIR (Pasiva - Peso 2)",
-    "Pregunta 1 para BARD (Pasiva - Peso 2)", "Pregunta 2 para BARD (Pasiva - Peso 2)", "Pregunta 3 para BARD (Pasiva - Peso 2)", "Pregunta 4 para BARD (Pasiva - Peso 2)",
-    "Pregunta 1 para ROGUE (Pasiva - Peso 2)", "Pregunta 2 para ROGUE (Pasiva - Peso 2)", "Pregunta 3 para ROGUE (Pasiva - Peso 2)", "Pregunta 4 para ROGUE (Pasiva - Peso 2)",
+    "Pregunta 1 para HEIR (Pasiva - Peso 6)", "Pregunta 2 para HEIR (Pasiva - Peso 6)", "Pregunta 3 para HEIR (Pasiva - Peso 6)", "Pregunta 4 para HEIR (Pasiva - Peso 6)",
+    "Pregunta 1 para BARD (Pasiva - Peso 5)", "Pregunta 2 para BARD (Pasiva - Peso 5)", "Pregunta 3 para BARD (Pasiva - Peso 5)", "Pregunta 4 para BARD (Pasiva - Peso 5)",
+    "Pregunta 1 para ROGUE (Pasiva - Peso 4)", "Pregunta 2 para ROGUE (Pasiva - Peso 4)", "Pregunta 3 para ROGUE (Pasiva - Peso 4)", "Pregunta 4 para ROGUE (Pasiva - Peso 4)",
+    "Pregunta 1 para PAGE (Pasiva - Peso 3)", "Pregunta 2 para PAGE (Pasiva - Peso 3)", "Pregunta 3 para PAGE (Pasiva - Peso 3)", "Pregunta 4 para PAGE (Pasiva - Peso 3)",
+    "Pregunta 1 para SEER (Pasiva - Peso 2)", "Pregunta 2 para SEER (Pasiva - Peso 2)", "Pregunta 3 para SEER (Pasiva - Peso 2)", "Pregunta 4 para SEER (Pasiva - Peso 2)",
     "Pregunta 1 para MAID (Pasiva - Peso 1)", "Pregunta 2 para MAID (Pasiva - Peso 1)", "Pregunta 3 para MAID (Pasiva - Peso 1)", "Pregunta 4 para MAID (Pasiva - Peso 1)",
-    "Pregunta 1 para SEER (Pasiva - Peso 1)", "Pregunta 2 para SEER (Pasiva - Peso 1)", "Pregunta 3 para SEER (Pasiva - Peso 1)", "Pregunta 4 para SEER (Pasiva - Peso 1)",
-    "Pregunta 1 para PAGE (Pasiva - Peso 1)", "Pregunta 2 para PAGE (Pasiva - Peso 1)", "Pregunta 3 para PAGE (Pasiva - Peso 1)", "Pregunta 4 para PAGE (Pasiva - Peso 1)",
-
+  
     // ASPECTOS (49-96)
     "Pregunta 1 para LIGHT", "Pregunta 2 para LIGHT", "Pregunta 3 para LIGHT", "Pregunta 4 para LIGHT",
     "Pregunta 1 para VOID", "Pregunta 2 para VOID", "Pregunta 3 para VOID", "Pregunta 4 para VOID",
