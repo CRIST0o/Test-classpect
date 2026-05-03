@@ -33,7 +33,6 @@ const items = {
 
 // 2. BANCO DE PREGUNTAS (Escribe tus 96 preguntas aquí)
 const misPreguntas = [
-    // CLASES ACTIVAS (1-24)
 // CLASES ACTIVAS (1-24)
     "Pregunta 1 para WITCH (Activa - Peso 6)", "Pregunta 2 para WITCH (Activa - Peso 6)", "Pregunta 3 para WITCH (Activa - Peso 6)", "Pregunta 4 para WITCH (Activa - Peso 6)",
     "Pregunta 1 para PRINCE (Activa - Peso 5)", "Pregunta 2 para PRINCE (Activa - Peso 5)", "Pregunta 3 para PRINCE (Activa - Peso 5)", "Pregunta 4 para PRINCE (Activa - Peso 5)",
@@ -49,7 +48,6 @@ const misPreguntas = [
     "Pregunta 1 para PAGE (Pasiva - Peso 3)", "Pregunta 2 para PAGE (Pasiva - Peso 3)", "Pregunta 3 para PAGE (Pasiva - Peso 3)", "Pregunta 4 para PAGE (Pasiva - Peso 3)",
     "Pregunta 1 para SEER (Pasiva - Peso 2)", "Pregunta 2 para SEER (Pasiva - Peso 2)", "Pregunta 3 para SEER (Pasiva - Peso 2)", "Pregunta 4 para SEER (Pasiva - Peso 2)",
     "Pregunta 1 para MAID (Pasiva - Peso 1)", "Pregunta 2 para MAID (Pasiva - Peso 1)", "Pregunta 3 para MAID (Pasiva - Peso 1)", "Pregunta 4 para MAID (Pasiva - Peso 1)",
-  
     // ASPECTOS (49-96)
     "Pregunta 1 para LIGHT", "Pregunta 2 para LIGHT", "Pregunta 3 para LIGHT", "Pregunta 4 para LIGHT",
     "Pregunta 1 para VOID", "Pregunta 2 para VOID", "Pregunta 3 para VOID", "Pregunta 4 para VOID",
