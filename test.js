@@ -181,11 +181,12 @@ function calcularClasspect() {
     // El resto de tu lógica para buscar ganClase y ganAspecto sigue igual...
     // Pero ahora 'totalActivo' y 'totalPasivo' reflejan la intensidad de las clases pesadas.
     
-    let ganClase = "";
-    let maxClase = -1;
+let ganClase = "";
+    let maxClase = -Infinity; // Cambiado a Infinity por si hay puntos negativos
     let ganAspecto = "";
-    let maxAspecto = -1;
+    let maxAspecto = -Infinity;
 
+    // 1. Buscamos la clase y el aspecto ganador normalmente
     for (let key in items) {
         if (items[key].tipo !== "aspecto") {
             if (filtroGenero === 'masculine' && clasesFemeninas.includes(key)) continue;
@@ -201,9 +202,20 @@ function calcularClasspect() {
                 ganAspecto = key; 
             }
         }
+    } // <--- AQUÍ termina el bucle for
+
+    // 2. AHORA calculamos si ese resultado asciende a Master Class
+    const umbralMaster = 100; 
+    let tituloFinal = `${ganClase} of ${ganAspecto}`;
+
+    if (totalActivo - totalPasivo > umbralMaster) {
+        tituloFinal = `Lord of ${ganAspecto}`;
+    } else if (totalPasivo - totalActivo > umbralMaster) {
+        tituloFinal = `Muse of ${ganAspecto}`;
     }
 
-    mostrarResultados(`${ganClase} of ${ganAspecto}`, ganAspecto, totalActivo, totalPasivo);
+    // 3. Enviamos el 'tituloFinal' (que ya puede ser Lord/Muse) a la pantalla
+    mostrarResultados(tituloFinal, ganAspecto, totalActivo, totalPasivo);
 }
 function mostrarResultados(rol, aspecto, act, pas) {
     const box = document.getElementById('resultado-box');
