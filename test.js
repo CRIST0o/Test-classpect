@@ -80,11 +80,16 @@ function generarPreguntas() {
     indices.forEach((idReal, iVisual) => {
         const qID = idReal + 1;
         htmlTotal += `
-            <div class="pregunta">
-                <p><strong>${iVisual + 1}.</strong> ${misPreguntas[idReal]}</p>
-                <div class="opciones-likert">
-                    <span class="label-rango" style="color: #33a474;">De acuerdo</span>
-                    
+        <div class="pregunta">
+            <p><strong>${iVisual + 1}.</strong> ${misPreguntas[idReal]}</p>
+            
+            <div class="opciones-likert">
+                <div class="fila-etiquetas">
+                    <span class="label-rango">De acuerdo</span>
+                    <span class="label-rango">En desacuerdo</span>
+                </div>
+                
+                <div class="fila-botones">
                     <label><input type="radio" name="q${qID}" value="10" class="iv5"><span class="circulo v5"></span></label>
                     <label><input type="radio" name="q${qID}" value="9" class="iv4"><span class="circulo v4"></span></label>
                     <label><input type="radio" name="q${qID}" value="8" class="iv3"><span class="circulo v3"></span></label>
@@ -98,54 +103,12 @@ function generarPreguntas() {
                     <label><input type="radio" name="q${qID}" value="2" class="ip3"><span class="circulo p3"></span></label>
                     <label><input type="radio" name="q${qID}" value="1" class="ip4"><span class="circulo p4"></span></label>
                     <label><input type="radio" name="q${qID}" value="0" class="ip5"><span class="circulo p5"></span></label>
-
-                    <span class="label-rango" style="color: #885e9e;">En desacuerdo</span>
                 </div>
-            </div>`;
+            </div>
+        </div>`;
     });
     container.innerHTML = htmlTotal;
 }
-
-// Asegúrate de que el botón en tu HTML tenga: onclick="ejecutarAscenso()"
-function ejecutarAscenso() {
-    const btn = document.getElementById('btn-ascender');
-    btn.classList.add('visitado'); // Esto lo vuelve morado permanentemente
-    calcularClasspect();
-}
-
-// ... (Tus items y preguntas se mantienen igual)
-
-function generarPreguntas() {
-    const container = document.getElementById('quiz-container');
-    if (!container) return;
-    let indices = mezclarArray(Array.from(Array(96).keys()));
-    let htmlTotal = "";
-
-    indices.forEach((idReal, iVisual) => {
-        const qID = idReal + 1;
-        htmlTotal += `
-            <div class="pregunta">
-                <p><strong>${iVisual + 1}.</strong> ${misPreguntas[idReal]}</p>
-                <div class="opciones-likert">
-                    <span class="label-rango" style="color: #33a474;">De acuerdo</span>
-                    <label><input type="radio" name="q${qID}" value="10" class="iv5"><span class="circulo v5"></span></label>
-                    <label><input type="radio" name="q${qID}" value="9" class="iv4"><span class="circulo v4"></span></label>
-                    <label><input type="radio" name="q${qID}" value="8" class="iv3"><span class="circulo v3"></span></label>
-                    <label><input type="radio" name="q${qID}" value="7" class="iv2"><span class="circulo v2"></span></label>
-                    <label><input type="radio" name="q${qID}" value="6" class="iv1"><span class="circulo v1"></span></label>
-                    <label><input type="radio" name="q${qID}" value="5" class="in" checked><span class="circulo neutro"></span></label>
-                    <label><input type="radio" name="q${qID}" value="4" class="ip1"><span class="circulo p1"></span></label>
-                    <label><input type="radio" name="q${qID}" value="3" class="ip2"><span class="circulo p2"></span></label>
-                    <label><input type="radio" name="q${qID}" value="2" class="ip3"><span class="circulo p3"></span></label>
-                    <label><input type="radio" name="q${qID}" value="1" class="ip4"><span class="circulo p4"></span></label>
-                    <label><input type="radio" name="q${qID}" value="0" class="ip5"><span class="circulo p5"></span></label>
-                    <span class="label-rango" style="color: #885e9e;">En desacuerdo</span>
-                </div>
-            </div>`;
-    });
-    container.innerHTML = htmlTotal;
-}
-
 function ejecutarAscenso() {
     const btn = document.getElementById('btn-ascender');
     if(btn) btn.classList.add('visitado'); 
