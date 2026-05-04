@@ -137,6 +137,11 @@ function ejecutarAscenso() {
 }
 
 function calcularClasspect() {
+    const filtroGenero = document.getElementById('gender-filter').value;
+    // Arrays de género actualizados (incluyendo los que faltaban)
+    const clasesFemeninas = ["Witch", "Sylph", "Maid"];
+    const clasesMasculinas = ["Prince", "Bard", "Heir"];
+
     for (let key in items) { items[key].puntos = 0; }
 
     let totalActivo = 0;
@@ -145,18 +150,37 @@ function calcularClasspect() {
     for (let i = 1; i <= 96; i++) {
         const seleccionado = document.querySelector(`input[name="q${i}"]:checked`);
         if (seleccionado) {
-            const valor = parseInt(seleccionado.value);
+            // --- NUEVA LÓGICA DE NORMALIZACIÓN ---
+            // El valor original es de 0 a 10. Al restar 5:
+            // 10 se vuelve 5, 5 se vuelve 0, 0 se vuelve -5.
+            const valorBase = parseInt(seleccionado.value);
+            const valorNormalizado = valorBase - 5; 
+
             for (let key in items) {
                 if (items[key].preguntas.includes(i)) {
-                    items[key].puntos += valor;
-                    if (items[key].tipo === "activa") totalActivo += valor;
-                    if (items[key].tipo === "pasiva") totalPasivo += valor;
+                    
+                    // 1. Suma para la clase (con posibilidad de restar)
+                    items[key].puntos += valorNormalizado;
+
+                    // 2. Suma para la balanza Activo/Pasivo usando pesos
+                    const pesoImportancia = items[key].peso || 1;
+                    const puntosConPeso = valorNormalizado * pesoImportancia;
+
+                    if (items[key].tipo === "activa") {
+                        totalActivo += puntosConPeso;
+                    } else if (items[key].tipo === "pasiva") {
+                        totalPasivo += puntosConPeso;
+                    }
                 }
             }
         }
     }
 
-    // CORRECCIÓN AQUÍ: ganClase unido, sin espacios
+    // El resto de la búsqueda de ganClase y ganAspecto se mantiene igual
+    // ...
+    // El resto de tu lógica para buscar ganClase y ganAspecto sigue igual...
+    // Pero ahora 'totalActivo' y 'totalPasivo' reflejan la intensidad de las clases pesadas.
+    
     let ganClase = "";
     let maxClase = -1;
     let ganAspecto = "";
@@ -164,6 +188,9 @@ function calcularClasspect() {
 
     for (let key in items) {
         if (items[key].tipo !== "aspecto") {
+            if (filtroGenero === 'masculine' && clasesFemeninas.includes(key)) continue;
+            if (filtroGenero === 'feminine' && clasesMasculinas.includes(key)) continue;
+
             if (items[key].puntos > maxClase) { 
                 maxClase = items[key].puntos; 
                 ganClase = key; 
@@ -178,7 +205,6 @@ function calcularClasspect() {
 
     mostrarResultados(`${ganClase} of ${ganAspecto}`, ganAspecto, totalActivo, totalPasivo);
 }
-
 function mostrarResultados(rol, aspecto, act, pas) {
     const box = document.getElementById('resultado-box');
     if (!box) return;
