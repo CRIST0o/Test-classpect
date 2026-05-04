@@ -79,7 +79,7 @@ const misPreguntas = [
     //Doom
     "A menudo la gente me percibe como alguien pesimista.", "Me siento extrañamente cómodo operando dentro de límites y reglas estrictas.", "Acepto que para que algo nuevo funcione, otras cosas deben ser sacrificadas o dejadas atrás.", "No busco dar optimismo falso cuando alguien sufre.",
     //Mind
-    "Yo soy mis propias acciones y lo que hago.", "Mi mayor temor es perder la objetividad o dejar que mis emociones nublen mi juicio, llevándome a tomar decisiones basadas en impulsos ciegos en lugar de en la razón.", "Una vez que he analizado todas las opciones y tomado un camino, soy capaz de ejecutar mis planes con una precisión y claridad que otros encuentran asombrosa.", "A menudo me cuesta tomar una decisión por ver tantas posibilidades.",
+    "Superpongo la busqueda de la objetividad sobre la del 'yo'.", "Mi mayor temor es perder la objetividad o dejar que mis emociones nublen mi juicio, llevándome a tomar decisiones basadas en impulsos ciegos en lugar de en la razón.", "Una vez que he analizado todas las opciones y tomado un camino, soy capaz de ejecutar mis planes con una precisión y claridad que otros encuentran asombrosa.", "A menudo me parece fácil tomar una decisión aunque hayan tantas posibilidades, es como si lo tuviera claro.",
     //Heart
     "Para mí, lo peor que puede hacer una persona es traicionar su propia identidad.", "Mi mayor temor es perder el contacto conmigo mismo o quién soy.", "Confío en mis sentimientos e impulsos internos para navegar el mundo.", "Mi identidad no es algo que elijo o cambio, es una esencia interna y profunda que guía mis acciones y me define por encima de cualquier lógica externa."
 ];
