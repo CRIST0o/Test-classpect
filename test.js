@@ -1,22 +1,20 @@
 // 1. CONFIGURACIÓN DE LOS 24 ÍTEMS (Clases y Aspectos)
 const items = {
-    // ACTIVAS (Pesos: Witch, Prince, Thief valen x2 para Lord/Muse)
+    // ACTIVAS
     "Witch":  { preguntas: [1, 2, 3, 4], puntos: 0, tipo: "activa", peso: 6 },
     "Prince": { preguntas: [5, 6, 7, 8], puntos: 0, tipo: "activa", peso: 5 },
     "Thief":  { preguntas: [9, 10, 11, 12], puntos: 0, tipo: "activa", peso: 4 },
     "Knight": { preguntas: [13, 14, 15, 16], puntos: 0, tipo: "activa", peso: 3 },
     "Mage":   { preguntas: [17, 18, 19, 20], puntos: 0, tipo: "activa", peso: 2 },
     "Sylph":  { preguntas: [21, 22, 23, 24], puntos: 0, tipo: "activa", peso: 1 },
-
-    // PASIVAS (Pesos: Heir, Bard, Rogue valen x2 para Lord/Muse)
+    // PASIVAS
     "Heir":   { preguntas: [25, 26, 27, 28], puntos: 0, tipo: "pasiva", peso: 6 },
     "Bard":   { preguntas: [29, 30, 31, 32], puntos: 0, tipo: "pasiva", peso: 5 },
     "Rogue":  { preguntas: [33, 34, 35, 36], puntos: 0, tipo: "pasiva", peso: 4 },
     "Page":   { preguntas: [45, 46, 47, 48], puntos: 0, tipo: "pasiva", peso: 3 },
     "Seer":   { preguntas: [41, 42, 43, 44], puntos: 0, tipo: "pasiva", peso: 2 },
     "Maid":   { preguntas: [37, 38, 39, 40], puntos: 0, tipo: "pasiva", peso: 1 },
-
-    // ASPECTOS (Suma normal, sin peso)
+    // ASPECTOS
     "Light":  { preguntas: [49, 50, 51, 52], puntos: 0, tipo: "aspecto" },
     "Void":   { preguntas: [53, 54, 55, 56], puntos: 0, tipo: "aspecto" },
     "Breath": { preguntas: [57, 58, 59, 60], puntos: 0, tipo: "aspecto" },
@@ -30,36 +28,59 @@ const items = {
     "Mind":   { preguntas: [89, 90, 91, 92], puntos: 0, tipo: "aspecto" },
     "Heart":  { preguntas: [93, 94, 95, 96], puntos: 0, tipo: "aspecto" }
 };
-
 // 2. BANCO DE PREGUNTAS (Escribe tus 96 preguntas aquí)
 const misPreguntas = [
 // CLASES ACTIVAS (1-24)
+    //Witch
     "Pregunta 1 para WITCH (Activa - Peso 6)", "Pregunta 2 para WITCH (Activa - Peso 6)", "Pregunta 3 para WITCH (Activa - Peso 6)", "Pregunta 4 para WITCH (Activa - Peso 6)",
+    //Prince
     "Pregunta 1 para PRINCE (Activa - Peso 5)", "Pregunta 2 para PRINCE (Activa - Peso 5)", "Pregunta 3 para PRINCE (Activa - Peso 5)", "Pregunta 4 para PRINCE (Activa - Peso 5)",
+    //Thief
     "Pregunta 1 para THIEF (Activa - Peso 4)", "Pregunta 2 para THIEF (Activa - Peso 4)", "Pregunta 3 para THIEF (Activa - Peso 4)", "Pregunta 4 para THIEF (Activa - Peso 4)",
+    //Knight
     "Pregunta 1 para KNIGHT (Activa - Peso 3)", "Pregunta 2 para KNIGHT (Activa - Peso 3)", "Pregunta 3 para KNIGHT (Activa - Peso 3)", "Pregunta 4 para KNIGHT (Activa - Peso 3)",
+    //Mage
     "Pregunta 1 para MAGE (Activa - Peso 2)", "Pregunta 2 para MAGE (Activa - Peso 2)", "Pregunta 3 para MAGE (Activa - Peso 2)", "Pregunta 4 para MAGE (Activa - Peso 2)",
+    //Sylph
     "Pregunta 1 para SYLPH (Activa - Peso 1)", "Pregunta 2 para SYLPH (Activa - Peso 1)", "Pregunta 3 para SYLPH (Activa - Peso 1)", "Pregunta 4 para SYLPH (Activa - Peso 1)",
 
-    // CLASES PASIVAS (25-48)
+// CLASES PASIVAS (25-48)
+    //Heir
     "Pregunta 1 para HEIR (Pasiva - Peso 6)", "Pregunta 2 para HEIR (Pasiva - Peso 6)", "Pregunta 3 para HEIR (Pasiva - Peso 6)", "Pregunta 4 para HEIR (Pasiva - Peso 6)",
+    //Bard
     "Pregunta 1 para BARD (Pasiva - Peso 5)", "Pregunta 2 para BARD (Pasiva - Peso 5)", "Pregunta 3 para BARD (Pasiva - Peso 5)", "Pregunta 4 para BARD (Pasiva - Peso 5)",
+    //Rogue
     "Pregunta 1 para ROGUE (Pasiva - Peso 4)", "Pregunta 2 para ROGUE (Pasiva - Peso 4)", "Pregunta 3 para ROGUE (Pasiva - Peso 4)", "Pregunta 4 para ROGUE (Pasiva - Peso 4)",
+    //Page
     "Pregunta 1 para PAGE (Pasiva - Peso 3)", "Pregunta 2 para PAGE (Pasiva - Peso 3)", "Pregunta 3 para PAGE (Pasiva - Peso 3)", "Pregunta 4 para PAGE (Pasiva - Peso 3)",
+    //Seer
     "Pregunta 1 para SEER (Pasiva - Peso 2)", "Pregunta 2 para SEER (Pasiva - Peso 2)", "Pregunta 3 para SEER (Pasiva - Peso 2)", "Pregunta 4 para SEER (Pasiva - Peso 2)",
+    //Maid
     "Pregunta 1 para MAID (Pasiva - Peso 1)", "Pregunta 2 para MAID (Pasiva - Peso 1)", "Pregunta 3 para MAID (Pasiva - Peso 1)", "Pregunta 4 para MAID (Pasiva - Peso 1)",
-    // ASPECTOS (49-96)
+// ASPECTOS (49-96)
+    //Light
     "Pregunta 1 para LIGHT", "Pregunta 2 para LIGHT", "Pregunta 3 para LIGHT", "Pregunta 4 para LIGHT",
+    //Void
     "Pregunta 1 para VOID", "Pregunta 2 para VOID", "Pregunta 3 para VOID", "Pregunta 4 para VOID",
+    //Breath
     "Pregunta 1 para BREATH", "Pregunta 2 para BREATH", "Pregunta 3 para BREATH", "Pregunta 4 para BREATH",
+    //Blood
     "Pregunta 1 para BLOOD", "Pregunta 2 para BLOOD", "Pregunta 3 para BLOOD", "Pregunta 4 para BLOOD",
+    //Time
     "Pregunta 1 para TIME", "Pregunta 2 para TIME", "Pregunta 3 para TIME", "Pregunta 4 para TIME",
+    //Space
     "Pregunta 1 para SPACE", "Pregunta 2 para SPACE", "Pregunta 3 para SPACE", "Pregunta 4 para SPACE",
+    //Rage
     "Pregunta 1 para RAGE", "Pregunta 2 para RAGE", "Pregunta 3 para RAGE", "Pregunta 4 para RAGE",
+    //Hope
     "Pregunta 1 para HOPE", "Pregunta 2 para HOPE", "Pregunta 3 para HOPE", "Pregunta 4 para HOPE",
+    //Life
     "Pregunta 1 para LIFE", "Pregunta 2 para LIFE", "Pregunta 3 para LIFE", "Pregunta 4 para LIFE",
+    //Doom
     "Pregunta 1 para DOOM", "Pregunta 2 para DOOM", "Pregunta 3 para DOOM", "Pregunta 4 para DOOM",
+    //Mind
     "Pregunta 1 para MIND", "Pregunta 2 para MIND", "Pregunta 3 para MIND", "Pregunta 4 para MIND",
+    //Heart
     "Pregunta 1 para HEART", "Pregunta 2 para HEART", "Pregunta 3 para HEART", "Pregunta 4 para HEART"
 ];
 // 3. MEZCLAR ÍNDICES PARA ALEATORIEDAD
