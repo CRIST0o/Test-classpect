@@ -1,51 +1,310 @@
-/* --- MEDIA QUERIES (ARREGLO PARA MÓVIL) --- */
+/* --- CONFIGURACIÓN GLOBAL DEL CURSOR --- */
+
+/* El selector '*' aplica a absolutamente todo (texto, divs, fondo) */
+* {
+    cursor: url('pointer2.png'), auto;
+    /* Evita que el navegador suavice los bordes del cursor */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Cambiamos a la mano solo en elementos con los que se puede interactuar */
+button, 
+a, 
+.circulo, 
+#btn-ascender, 
+#btn-ascender span,
+select,
+input[type="radio"] + .circulo {
+    /* Usamos 5 0 para que el clic sea en la punta del dedo índice */
+    cursor: url('pointer1.png') 5 0, pointer !important;
+}
+
+/* Evita que el cursor cambie a la barra de texto al pasar sobre las preguntas */
+p, span, h1, .label-rango {
+    cursor: url('pointer2.png'), auto;
+}
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #333333;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 20px 10px;
+    max-width: 950px;
+    border-bottom: 2px solid #000000;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: #eeeeee;
+    padding: 40px 60px;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* --- CONFIGURACIÓN --- */
+.config-box {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+}
+
+/* --- PREGUNTAS --- */
+.pregunta {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.pregunta p {
+    font-size: 18px; 
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+/* --- LIKERT ESTILO MSPA PURO CON COLORES PERSONALIZADOS --- */
+
+/* --- LIKERT DEFinitivo: ESPIRALES Y COLORES --- */
+
+.opciones-likert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+/* Ocultar radio original */
+.opciones-likert input[type="radio"] {
+    display: none;
+}
+
+/* Base del círculo: SIN bordes, SOLO espiral */
+.circulo {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: none;
+    border: none !important;
+    box-shadow: none !important;
+    /* ... lo que ya tienes ... */
+    image-rendering: -webkit-optimize-contrast; /* Para Chrome/Edge modernos */
+    backface-visibility: hidden; /* Truco para forzar renderizado por GPU */
+    transform: translateZ(0); /* Obliga a la tarjeta de video a dibujar el círculo */
+    background-size: 85% 85%; /* En lugar de contain, deja un pequeño aire alrededor */
+    background-position: center;
+}
+/* --- ESTADO NO SELECCIONADO (Muestra el espiral) --- */
+/* Lado Verde (#18e700) */
+.v5, .v4, .v3, .v2, .v1 { background-image: url('espiral-v.png'); opacity: 0.7; }
+/* Lado Rojo (#fd0000) */
+.p1, .p2, .p3, .p4, .p5 { background-image: url('espiral-r.png'); opacity: 0.7; }
+/* Neutro */
+.neutro { background-image: url('espiral-g.png'); opacity: 0.5; }
+
+/* Tamaños */
+.v5, .p5 { width: 34px; height: 34px; }
+.v4, .p4 { width: 28px; height: 28px; }
+.v3, .p3 { width: 22px; height: 22px; }
+.v2, .p2 { width: 18px; height: 18px; }
+.v1, .p1 { width: 14px; height: 14px; }
+.neutro   { width: 12px; height: 12px; }
+
+/* --- ESTADO SELECCIONADO (Se vuelve círculo sólido) --- */
+input[type="radio"]:checked + .circulo {
+    background-image: none !important;
+    opacity: 1;
+}
+
+/* Colores sólidos al marcar */
+input[type="radio"][class^="iv"]:checked + .circulo { background-color: #18e700; }
+input[type="radio"][class^="ip"]:checked + .circulo { background-color: #fd0000; }
+input[type="radio"].in:checked + .circulo { background-color: #999999; }
+
+/* --- ETIQUETAS DE TEXTO --- */
+.label-rango {
+    font-size: 12px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+/* Colores forzados para los textos */
+.opciones-likert .label-rango:first-of-type {
+    color: #18e700 !important;
+}
+.opciones-likert .label-rango:last-of-type {
+    color: #fd0000 !important;
+}
+/* --- SCROLLBAR ESTILO RETRO --- */
+/* Tamaño de la barra */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Fondo de la barra (el track) */
+::-webkit-scrollbar-track {
+    background: #333333; 
+    border-left: 2px solid #000000;
+}
+
+/* La pieza que se mueve (el thumb) */
+::-webkit-scrollbar-thumb {
+    background: #eeeeee;
+    border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cccccc;
+}
+/* --- BOTÓN COMANDO --- */
+/* --- BOTÓN COMANDO (ASCENDER.) --- */
+/* --- BOTÓN COMANDO (ASCENDER.) --- */
+#btn-ascender {
+    display: block;
+    width: fit-content;
+    margin: 50px auto;
+    background: transparent;
+    border: none;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Color base: Siempre Azul */
+#btn-ascender span {
+    color: #0000ff; 
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+#btn-ascender::before { 
+    content: "> "; 
+    color: #000000; 
+}
+
+/* CLASE ACTIVA: Solo se aplica cuando el JS lo ordena */
+/* Usamos !important para asegurar que sobreescriba el azul inicial */
+#btn-ascender.visitado span {
+    color: #551a8b !important; 
+}
+/* --- RESULTADOS --- */
+#resultado-box {
+    margin-top: 50px;
+    padding: 40px 10px;
+    display: none;
+    text-align: center;
+    border-top: 2px dashed #000000;
+}
+
+#rol-final { 
+    font-size: 32px; 
+    font-weight: bold; 
+    margin: 20px auto;
+    display: inline-block; 
+    padding: 12px 25px;
+    border-radius: 20px; 
+    line-height: 1.2;
+}
+
+/* --- COLORES DE ASPECTOS --- */
+.res-space #rol-final  { color: #ffffff; background-color: #000000; }
+.res-time #rol-final   { color: #ff2106; background-color: #b70d0e; }
+.res-light #rol-final  { color: #f6fa4e; background-color: #f0840c; }
+.res-void #rol-final   { color: #001957; background-color: #104ea2; }
+.res-breath #rol-final { color: #47dff9; background-color: #4379e6; }
+.res-blood #rol-final  { color: #ba1016; background-color: #3e1601; }
+.res-hope #rol-final   { color: #fdfdfd; background-color: #ffde55; }
+.res-rage #rol-final   { color: #9c4dad; background-color: #520c61; }
+.res-life #rol-final   { color: #72eb34; background-color: #a49787; }
+.res-doom #rol-final   { color: #000000; background-color: #306800; }
+.res-mind #rol-final   { color: #ffffff; background-color: #008754; } 
+.res-heart #rol-final  { color: #bd1864; background-color: #ff98c5; }
+
+/* --- LIKERT CON ETIQUETAS LATERALES --- */
+.opciones-likert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Un poco más de espacio para respirar */
+    margin-top: 20px;
+}
+.opciones-likert .label-rango:first-of-type {
+    color: #18e700 !important;
+}
+
+/* Seleccionamos específicamente el último label (derecha) */
+.opciones-likert .label-rango:last-of-type {
+    color: #fd0000 !important;
+}
+.label-rango {
+    font-size: 12px;
+    font-weight: bold;
+    width: 100px; /* Ancho fijo para que los círculos queden siempre centrados */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- ARREGLO FINAL PARA MÓVIL (SÓLO CELULARES) --- */
 @media screen and (max-width: 600px) {
-    .container {
-        padding: 20px 10px;
-        border-left: none;
-        border-right: none;
-    }
-
-    .pregunta p {
-        font-size: 16px;
-        padding: 0 10px;
-    }
-
     .opciones-likert {
-        display: flex;
-        flex-wrap: wrap; 
-        justify-content: center; /* Centra los círculos */
-        gap: 8px 4px; /* Espacio vertical de 8px entre texto y círculos */
-        padding: 0 5px;
+        display: flex !important;
+        flex-wrap: wrap !important; /* Permite crear dos filas */
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px 2px !important; /* 10px entre texto y botones, 2px entre espirales */
+        padding: 10px 0 !important;
+        width: 100% !important;
     }
 
-    /* Forzamos a los labels a ocupar el 100% del ancho para que bajen los círculos */
+    /* FILA 1: Los textos (De acuerdo / En desacuerdo) */
     .label-rango {
-        width: 100% !important; 
-        font-size: 10px;
-        margin-bottom: 10px;
-        order: -1; 
-        display: flex;
-        justify-content: space-between; /* Pone uno a la izquierda y otro a la derecha */
-        pointer-events: none; /* Evita que el texto interfiera con los clics */
+        display: block !important;
+        width: 48% !important; /* Cada uno ocupa casi la mitad de la fila superior */
+        font-size: 10px !important;
+        margin-bottom: 12px !important; /* Separa los textos de los botones */
+        order: -1 !important; /* Los obliga a estar arriba */
+        white-space: nowrap !important;
     }
 
-    /* Ajustamos el alineado específico dentro del flex */
-    .opciones-likert .label-rango:first-of-type { 
-        text-align: left; 
-        color: #18e700 !important;
-    }
-    
-    .opciones-likert .label-rango:last-of-type { 
-        text-align: right; 
-        color: #fd0000 !important;
+    .label-rango:first-of-type { text-align: left !important; }
+    .label-rango:last-of-type { text-align: right !important; }
+
+    /* FILA 2: Los botones (Espirales) */
+    /* Forzamos que los inputs no tengan el estilo azul de Android */
+    .opciones-likert input[type="radio"] {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        flex-shrink: 0 !important; /* Impide que se amontonen o se salgan de fila */
+        margin: 0 !important;
     }
 
-    /* Reducimos el tamaño para que los 11 círculos quepan en el ancho de un celular pequeño */
-    .v5, .p5 { width: 26px; height: 26px; }
-    .v4, .p4 { width: 22px; height: 22px; }
-    .v3, .p3 { width: 18px; height: 18px; }
-    .v2, .p2 { width: 14px; height: 14px; }
-    .v1, .p1 { width: 12px; height: 12px; }
-    .neutro  { width: 10px; height: 10px; }
+    /* Tamaños ajustados para que los 11 quepan en el ancho de un celular estándar */
+    .v5, .p5 { width: 24px !important; height: 24px !important; }
+    .v4, .p4 { width: 21px !important; height: 21px !important; }
+    .v3, .p3 { width: 18px !important; height: 18px !important; }
+    .v2, .p2 { width: 15px !important; height: 15px !important; }
+    .v1, .p1 { width: 12px !important; height: 12px !important; }
+    .neutro  { width: 10px !important; height: 10px !important; }
 }
