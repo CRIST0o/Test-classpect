@@ -32,34 +32,34 @@ const items = {
 const misPreguntas = [
 // CLASES ACTIVAS (1-24)
     //Witch
-    "Pregunta 1 para WITCH (Activa - Peso 6)", "Pregunta 2 para WITCH (Activa - Peso 6)", "Pregunta 3 para WITCH (Activa - Peso 6)", "Pregunta 4 para WITCH (Activa - Peso 6)",
+    "Me encanta desafiar lo que todos consideran 'imposible' o 'sagrado'.", "A veces puedo ser demasiado terco cuando otros intentan ponerme límites.", "Confío plenamente en mi capacidad para tomar el control de una situación; no espero que las cosas sucedan, yo las obligo a suceder mediante mi voluntad.", "Si las leyes de mi entorno o la 'forma en que funcionan las cosas' me impiden lograr lo que quiero, no dudo en romperlas o cambiarlas a mi favor.",
     //Prince
-    "Pregunta 1 para PRINCE (Activa - Peso 5)", "Pregunta 2 para PRINCE (Activa - Peso 5)", "Pregunta 3 para PRINCE (Activa - Peso 5)", "Pregunta 4 para PRINCE (Activa - Peso 5)",
+    "Tiendo a tomar decisiones drásticas por los demás sin consultarles, porque estoy convencido de que soy el único con la voluntad necesaria para hacer lo que hace falta.", "Prefiero ser yo quien provoque el final de algo que ver cómo se desmorona lentamente fuera de mi control.", "Confío tan poco en la capacidad de los demás para manejar situaciones críticas que prefiero cargar con todo yo solo, aunque esa carga me termine amargando o destruyendo mis relaciones.", "Cuando siento que pierdo el control sobre una situación, mi reacción inmediata es actuar con fuerza y de forma tajante.",
     //Thief
-    "Pregunta 1 para THIEF (Activa - Peso 4)", "Pregunta 2 para THIEF (Activa - Peso 4)", "Pregunta 3 para THIEF (Activa - Peso 4)", "Pregunta 4 para THIEF (Activa - Peso 4)",
+    "No tengo problema en ser la persona 'difícil' o impopular si eso me garantiza el éxito,", "Confío tanto en mi visión y en mi capacidad que a menudo paso por encima de los deseos de los demás para asegurar el éxito.", "Nada me satisface más que superar a los demás y demostrar que puedo lograr objetivos que otros consideran imposibles o demasiado difíciles.", "Tengo un orgullo inmenso y me esfuerzo constantemente por demostrar que soy el mejor.",
     //Knight
-    "Pregunta 1 para KNIGHT (Activa - Peso 3)", "Pregunta 2 para KNIGHT (Activa - Peso 3)", "Pregunta 3 para KNIGHT (Activa - Peso 3)", "Pregunta 4 para KNIGHT (Activa - Peso 3)",
+    "Siento que es mi responsabilidad cargar con los problemas del grupo y proteger a los demás, incluso si eso significa sacrificar mis propios deseos o bienestar.", "Veo mis talentos y recursos como herramientas prácticas que debo dominar para ser útil en cualquier situación.", "Suelo trabajar con lo que tengo a mano, incluso si es poco, y me enorgullece mi capacidad para hacer que recursos limitados rindan al máximo.", "Me esfuerzo mucho por parecer que tengo todo bajo control y que soy alguien competente, porque me aterra que los demás descubran mis debilidades o dudas internas.",
     //Mage
-    "Pregunta 1 para MAGE (Activa - Peso 2)", "Pregunta 2 para MAGE (Activa - Peso 2)", "Pregunta 3 para MAGE (Activa - Peso 2)", "Pregunta 4 para MAGE (Activa - Peso 2)",
+    "Tengo una forma de procesar la información que a los demás les parece extraña o caótica, pero para mí tiene todo el sentido del mundo.", "Soy el tipo de persona que prefiere arreglar las cosas por su cuenta, de forma silenciosa y técnica, antes que perder el tiempo explicándoselo a los demás.", "Siento que la vida me ha obligado a aprender las lecciones de la manera más difícil posible.", "Sé exactamente cómo van a salir las cosas porque ya he pasado por eso.",
     //Sylph
-    "Pregunta 1 para SYLPH (Activa - Peso 1)", "Pregunta 2 para SYLPH (Activa - Peso 1)", "Pregunta 3 para SYLPH (Activa - Peso 1)", "Pregunta 4 para SYLPH (Activa - Peso 1)",
+    "Me tomo como una misión personal ayudar a que los demás alcancen su mejor versión, aunque a veces mi ayuda pueda parecer una imposición.", "Valoro el orden y la armonía, y me esfuerzo por ser la pieza que mantiene todo unido y funcionando, sin embargo, ese deseo de armonía me lleva a intentar controlar sutilmente las acciones de los demás para evitar que se desvíen del camino 'correcto' sin ser querer necesariamente ser el foco de atención.", "No necesito ser el centro de atención ni tomar decisiones drásticas, pero trabajo incansablemente en los detalles para asegurar que todo funcione correctamente", "Me cuesta mucho quedarme callada cuando veo que alguien está cometiendo un error.",
 
 // CLASES PASIVAS (25-48)
     //Heir
-    "Pregunta 1 para HEIR (Pasiva - Peso 6)", "Pregunta 2 para HEIR (Pasiva - Peso 6)", "Pregunta 3 para HEIR (Pasiva - Peso 6)", "Pregunta 4 para HEIR (Pasiva - Peso 6)",
+    "Confío tanto en el flujo de la vida que mi tranquilidad suele contagiar a los que me rodean.", "No busco liderar ni convencer a nadie, pero me doy cuenta de que mi forma de ser motiva a otros.", "No busco el control porque siento que, de alguna manera, el entorno siempre conspira a mi favor.", "Confío en que la vida me llevará por el camino correcto y me dejo llevar por las circunstancias, adaptándome con naturalidad a lo que venga.",
     //Bard
-    "Pregunta 1 para BARD (Pasiva - Peso 5)", "Pregunta 2 para BARD (Pasiva - Peso 5)", "Pregunta 3 para BARD (Pasiva - Peso 5)", "Pregunta 4 para BARD (Pasiva - Peso 5)",
+    "No busco pelear, pero tampoco busco encajar.", "Me gusta observar cómo los demás se toman todo tan en serio y, con un par de comentarios ácidos, demostrarles lo frágiles que son sus certezas.", "A veces provoco grandes cambios o rupturas simplemente por mi falta de acción o por mi descuido", "A veces basta con mi sola presencia o un comentario al pasar para que todo lo que no funciona termine de colapsar.",
     //Rogue
-    "Pregunta 1 para ROGUE (Pasiva - Peso 4)", "Pregunta 2 para ROGUE (Pasiva - Peso 4)", "Pregunta 3 para ROGUE (Pasiva - Peso 4)", "Pregunta 4 para ROGUE (Pasiva - Peso 4)",
+    "Me siento cómodo siendo el 'villano' en la historia de los poderosos, siempre y cuando eso signifique que mi grupo tiene lo que necesita, mi lealtad no es hacia las reglas, sino hacia quienes el sistema ha dejado atrás.", "Puedo ser muy desafiante con la autoridad o con las reglas si siento que estas son injustas o privan a otros de lo que merecen.", "Mi talento es identificar las falencias y llenarlos de forma sutil, sin que nadie note siquiera que fui yo quien lo hizo.", "A veces me cuesta definir quién soy o qué quiero para mí mismo, porque tiendo a volcar toda mi energía en las necesidades de los demás.",
     //Page
-    "Pregunta 1 para PAGE (Pasiva - Peso 3)", "Pregunta 2 para PAGE (Pasiva - Peso 3)", "Pregunta 3 para PAGE (Pasiva - Peso 3)", "Pregunta 4 para PAGE (Pasiva - Peso 3)",
+    "Me cuesta mucho confiar en mi propio juicio, así que tiendo a dejar que personalidades más dominantes tomen las riendas por mí.", "Puede que ahora me vea superado por las circunstancias o por personalidades más fuertes, pero mi voluntad es inquebrantable.", "Tengo una visión optimista y un poco ingenua del mundo, lo que a veces hace que otros se aprovechen de mí.", "A menudo siento que los demás esperan poco de mí o que yo mismo no encuentro mi lugar.",
     //Seer
-    "Pregunta 1 para SEER (Pasiva - Peso 2)", "Pregunta 2 para SEER (Pasiva - Peso 2)", "Pregunta 3 para SEER (Pasiva - Peso 2)", "Pregunta 4 para SEER (Pasiva - Peso 2)",
+    "Tengo una facilidad natural para conectar puntos que otros ignoran y entender las reglas no escritas de cualquier entorno.", "Mi satisfacción no viene de ejecutar la acción, sino de saber que el éxito fue posible gracias a mi lectura de la situación.", "Tengo una capacidad natural para ver el panorama completo cuando los demás solo ven el caos del momento.", "Me gusta recolectar datos y observar patrones antes de dar una opinión.",
     //Maid
-    "Pregunta 1 para MAID (Pasiva - Peso 1)", "Pregunta 2 para MAID (Pasiva - Peso 1)", "Pregunta 3 para MAID (Pasiva - Peso 1)", "Pregunta 4 para MAID (Pasiva - Peso 1)",
+    "Soy la persona que siempre cumple, la que sostiene el peso y la que no deja que nada se rompa.", "No busco cuidar a otrod todo el tiempo, busco ser tan eficiente en mi labor de soporte que, al final, no necesite a nadie más para ejecutar mi propia visión del mundo.", "Tengo una capacidad natural para absorber la carga de trabajo y las responsabilidades que otros evitan.", "Mi personalidad se define por una responsabilidad inquebrantable y una capacidad de gestión que asegura que nada se desmorone.",
 // ASPECTOS (49-96)
     //Light
-    "Tengo miedo a ser insignificante o irrelevante", "Me siento más seguro cuando todo está a la vista y no hay secretos o ambigüedades.", "Me siento más seguro cuando todo está a la vista y no hay secretos o ambigüedades.", "Creo que no existen las coincidencias; cada evento, por pequeño que sea, es una pieza clave en un esquema mayor.",
+    "Tengo miedo a ser insignificante o irrelevante", "Me siento más seguro cuando todo está a la vista y no hay secretos o ambigüedades.", "No soporto la ignorancia ni que se me oculte la verdad.", "Creo que no existen las coincidencias, cada evento, por pequeño que sea, es una pieza clave en un esquema mayor.",
     //Void
     "Confío en mi capacidad de resolver situaciones sin entender el proceso.", "Prefiero vivir en la duda antes que aceptar una verdad impuesta.", "Me aterra ser completamente transparente para los demás", "Siento pasión por lo que aún no existe o está oculto",
     //Breath
