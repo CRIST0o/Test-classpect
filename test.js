@@ -59,29 +59,29 @@ const misPreguntas = [
     "Pregunta 1 para MAID (Pasiva - Peso 1)", "Pregunta 2 para MAID (Pasiva - Peso 1)", "Pregunta 3 para MAID (Pasiva - Peso 1)", "Pregunta 4 para MAID (Pasiva - Peso 1)",
 // ASPECTOS (49-96)
     //Light
-    "Pregunta 1 para LIGHT", "Pregunta 2 para LIGHT", "Pregunta 3 para LIGHT", "Pregunta 4 para LIGHT",
+    "Tengo miedo a ser insignificante o irrelevante", "Me siento más seguro cuando todo está a la vista y no hay secretos o ambigüedades.", "Me siento más seguro cuando todo está a la vista y no hay secretos o ambigüedades.", "Creo que no existen las coincidencias; cada evento, por pequeño que sea, es una pieza clave en un esquema mayor.",
     //Void
-    "Pregunta 1 para VOID", "Pregunta 2 para VOID", "Pregunta 3 para VOID", "Pregunta 4 para VOID",
+    "Confío en mi capacidad de resolver situaciones sin entender el proceso.", "Prefiero vivir en la duda antes que aceptar una verdad impuesta.", "Me aterra ser completamente transparente para los demás", "Siento pasión por lo que aún no existe o está oculto",
     //Breath
-    "Pregunta 1 para BREATH", "Pregunta 2 para BREATH", "Pregunta 3 para BREATH", "Pregunta 4 para BREATH",
+    "Me asfixia que otros intenten dictar mi camino.", "Me gusta la idea de cambiar de rumbo en cualquier momento.", "Tiendo a desconectarme de las emociones en general, ya sean las mías o las de los demás.", "Me aterra no poder hacer lo que quiera.",
     //Blood
-    "Pregunta 1 para BLOOD", "Pregunta 2 para BLOOD", "Pregunta 3 para BLOOD", "Pregunta 4 para BLOOD",
+    "Me resulta casi imposible abandonar a alguien o un proyecto común.", "Creo firmemente que el consenso y la unión son más importantes que la libertad individual de hacer lo que uno quiera.", "Considero que mi identidad está definida por mis relaciones.", "Tengo miedo a que me abandonen mis seres queridos.",
     //Time
-    "Pregunta 1 para TIME", "Pregunta 2 para TIME", "Pregunta 3 para TIME", "Pregunta 4 para TIME",
+    "Siento una presión constante por avanzar.", "Si fallo no importa porque siempre se puede intentar de nuevo.", "No temo equivocarme, porque creo firmemente que de los errores se aprende.", "Si el objetivo es lo suficientemente importante, estoy dispuesto a tomar decisiones difíciles.",
     //Space
-    "Pregunta 1 para SPACE", "Pregunta 2 para SPACE", "Pregunta 3 para SPACE", "Pregunta 4 para SPACE",
+    "Creo que el momento en que algo nuevo cobra vida o forma es el evento más importante, por pequeño que sea.", "Valoro mis momentos de soledad.", "Prefiero esperar al momento preciso para actuar en lugar de forzar situaciones por impaciencia.", "Para mí, la calidad y la forma en que se desarrolla una tarea son tan importantes como el objetivo final.",
     //Rage
-    "Pregunta 1 para RAGE", "Pregunta 2 para RAGE", "Pregunta 3 para RAGE", "Pregunta 4 para RAGE",
+    "Acepto mis emociones negativas como partes esenciales de mi identidad.", "Mi mayor temor es convertirme en un seguidor complaciente que ha dejado de cuestionar la realidad.", "Cuestiono por naturaleza cualquier autoridad o sistema establecido.", "Prefiero una verdad dolorosa y destructiva antes que una mentira reconfortante que mantenga una estabilidad falsa.",
     //Hope
-    "Pregunta 1 para HOPE", "Pregunta 2 para HOPE", "Pregunta 3 para HOPE", "Pregunta 4 para HOPE",
+    "Me aterra descubrir que mis sueños eran solo fantasías sin peso real.", "Pregunta 2 para HOPE", "Me guía lo que considero que es correcto y justo, incluso si es fantasioso.", "Creo firmemente que la confianza a sí mismo es el mayor poder.",
     //Life
-    "Pregunta 1 para LIFE", "Pregunta 2 para LIFE", "Pregunta 3 para LIFE", "Pregunta 4 para LIFE",
+    "La idea de conformarme con lo que tengo me parece una forma de derrota.", "Mi prioridad es la búsqueda constante de una vida más abundante.", "Me genera un rechazo profundo la idea de vivir en la escasez.", "Tiendo a evaluar las situaciones basándome en el beneficio tangible que pueden aportar.",
     //Doom
-    "Pregunta 1 para DOOM", "Pregunta 2 para DOOM", "Pregunta 3 para DOOM", "Pregunta 4 para DOOM",
+    "A menudo la gente me percibe como alguien pesimista.", "Me siento extrañamente cómodo operando dentro de límites y reglas estrictas.", "Acepto que para que algo nuevo funcione, otras cosas deben ser sacrificadas o dejadas atrás.", "No busco dar optimismo falso cuando alguien sufre.",
     //Mind
-    "Pregunta 1 para MIND", "Pregunta 2 para MIND", "Pregunta 3 para MIND", "Pregunta 4 para MIND",
+    "Yo soy mis propias acciones y lo que hago.", "Mi mayor temor es perder la objetividad o dejar que mis emociones nublen mi juicio, llevándome a tomar decisiones basadas en impulsos ciegos en lugar de en la razón.", "Una vez que he analizado todas las opciones y tomado un camino, soy capaz de ejecutar mis planes con una precisión y claridad que otros encuentran asombrosa.", "A menudo me cuesta tomar una decisión por ver tantas posibilidades.",
     //Heart
-    "Pregunta 1 para HEART", "Pregunta 2 para HEART", "Pregunta 3 para HEART", "Pregunta 4 para HEART"
+    "Para mí, lo peor que puede hacer una persona es traicionar su propia identidad.", "Mi mayor temor es perder el contacto conmigo mismo o quién soy.", "Confío en mis sentimientos e impulsos internos para navegar el mundo.", "Mi identidad no es algo que elijo o cambio, es una esencia interna y profunda que guía mis acciones y me define por encima de cualquier lógica externa."
 ];
 // 3. MEZCLAR ÍNDICES PARA ALEATORIEDAD
 function mezclarArray(array) {
