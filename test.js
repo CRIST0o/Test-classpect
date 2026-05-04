@@ -11,9 +11,9 @@ const items = {
     "Heir":   { preguntas: [25, 26, 27, 28], puntos: 0, tipo: "pasiva", peso: 6 },
     "Bard":   { preguntas: [29, 30, 31, 32], puntos: 0, tipo: "pasiva", peso: 5 },
     "Rogue":  { preguntas: [33, 34, 35, 36], puntos: 0, tipo: "pasiva", peso: 4 },
-    "Page":   { preguntas: [45, 46, 47, 48], puntos: 0, tipo: "pasiva", peso: 3 },
+    "Page":   { preguntas: [37, 38, 39, 40], puntos: 0, tipo: "pasiva", peso: 3 },
     "Seer":   { preguntas: [41, 42, 43, 44], puntos: 0, tipo: "pasiva", peso: 2 },
-    "Maid":   { preguntas: [37, 38, 39, 40], puntos: 0, tipo: "pasiva", peso: 1 },
+    "Maid":   { preguntas: [45, 46, 47, 48], puntos: 0, tipo: "pasiva", peso: 1 },
     // ASPECTOS
     "Light":  { preguntas: [49, 50, 51, 52], puntos: 0, tipo: "aspecto" },
     "Void":   { preguntas: [53, 54, 55, 56], puntos: 0, tipo: "aspecto" },
