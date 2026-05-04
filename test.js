@@ -181,41 +181,51 @@ function calcularClasspect() {
     // El resto de tu lógica para buscar ganClase y ganAspecto sigue igual...
     // Pero ahora 'totalActivo' y 'totalPasivo' reflejan la intensidad de las clases pesadas.
     
-let ganClase = "";
+    let ganClase = "";
     let maxClase = -Infinity; // Cambiado a Infinity por si hay puntos negativos
     let ganAspecto = "";
     let maxAspecto = -Infinity;
-
-    // 1. Buscamos la clase y el aspecto ganador normalmente
+    
     for (let key in items) {
         if (items[key].tipo !== "aspecto") {
             if (filtroGenero === 'masculine' && clasesFemeninas.includes(key)) continue;
             if (filtroGenero === 'feminine' && clasesMasculinas.includes(key)) continue;
-
-            if (items[key].puntos > maxClase) { 
-                maxClase = items[key].puntos; 
-                ganClase = key; 
-            }
+            if (items[key].puntos > maxClase) maxClase = items[key].puntos;
         } else {
-            if (items[key].puntos > maxAspecto) { 
-                maxAspecto = items[key].puntos; 
-                ganAspecto = key; 
-            }
+            if (items[key].puntos > maxAspecto) maxAspecto = items[key].puntos;
         }
-    } // <--- AQUÍ termina el bucle for
-
-    // 2. AHORA calculamos si ese resultado asciende a Master Class
-    const umbralMaster = 100; 
-    let tituloFinal = `${ganClase} of ${ganAspecto}`;
-
-    if (totalActivo - totalPasivo > umbralMaster) {
-        tituloFinal = `Lord of ${ganAspecto}`;
-    } else if (totalPasivo - totalActivo > umbralMaster) {
-        tituloFinal = `Muse of ${ganAspecto}`;
     }
 
-    // 3. Enviamos el 'tituloFinal' (que ya puede ser Lord/Muse) a la pantalla
-    mostrarResultados(tituloFinal, ganAspecto, totalActivo, totalPasivo);
+    // 2. Recolectamos TODOS los que tengan ese puntaje máximo (para detectar empates)
+    let ganadoresClase = [];
+    let ganadoresAspecto = [];
+
+    for (let key in items) {
+        if (items[key].tipo !== "aspecto") {
+            if (filtroGenero === 'masculine' && clasesFemeninas.includes(key)) continue;
+            if (filtroGenero === 'feminine' && clasesMasculinas.includes(key)) continue;
+            if (items[key].puntos === maxClase) ganadoresClase.push(key);
+        } else {
+            if (items[key].puntos === maxAspecto) ganadoresAspecto.push(key);
+        }
+    }
+
+    // 3. Creamos los strings combinados (ej: "Rogue/Thief")
+    let stringClase = ganadoresClase.join('/');
+    let stringAspecto = ganadoresAspecto.join('/');
+
+    // 4. Lógica de Master Class (Lord/Muse)
+    const umbralMaster = 100; 
+    let tituloFinal = `${stringClase} of ${stringAspecto}`;
+
+    if (totalActivo - totalPasivo > umbralMaster) {
+        tituloFinal = `Lord of ${stringAspecto}`;
+    } else if (totalPasivo - totalActivo > umbralMaster) {
+        tituloFinal = `Muse of ${stringAspecto}`;
+    }
+
+    // 5. Mostrar resultados
+    mostrarResultados(tituloFinal, ganadoresAspecto[0], totalActivo, totalPasivo);
 }
 function mostrarResultados(rol, aspecto, act, pas) {
     const box = document.getElementById('resultado-box');
