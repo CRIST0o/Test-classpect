@@ -42,7 +42,7 @@ const misPreguntas = [
     //Mage
     "Tengo una forma de procesar la información que a los demás les parece extraña o caótica, pero para mí tiene todo el sentido del mundo.", "Soy el tipo de persona que prefiere arreglar las cosas por su cuenta, de forma silenciosa y técnica, antes que perder el tiempo explicándoselo a los demás.", "Siento que la vida me ha obligado a aprender las lecciones de la manera más difícil posible.", "Sé exactamente cómo van a salir las cosas porque ya he pasado por eso.",
     //Sylph
-    "Me tomo como una misión personal ayudar a que los demás alcancen su mejor versión, aunque a veces mi ayuda pueda parecer una imposición.", "Valoro el orden y la armonía, y me esfuerzo por ser la pieza que mantiene todo unido y funcionando, sin embargo, ese deseo de armonía me lleva a intentar controlar sutilmente las acciones de los demás para evitar que se desvíen del camino 'correcto' sin ser querer necesariamente ser el foco de atención.", "No necesito ser el centro de atención ni tomar decisiones drásticas, pero trabajo incansablemente en los detalles para asegurar que todo funcione correctamente", "Me cuesta mucho quedarme callada cuando veo que alguien está cometiendo un error.",
+    "Me tomo como una misión personal ayudar a que los demás alcancen su mejor versión, aunque a veces mi ayuda pueda parecer una imposición.", "Valoro el orden y la armonía, y me esfuerzo por ser la pieza que mantiene todo unido y funcionando, sin embargo, ese deseo de armonía me lleva a intentar controlar sutilmente las acciones de los demás para evitar que se desvíen del camino 'correcto' sin querer necesariamente ser el foco de atención.", "No necesito ser el centro de atención ni tomar decisiones drásticas, pero trabajo incansablemente en los detalles para asegurar que todo funcione correctamente", "Me cuesta mucho quedarme callada cuando veo que alguien está cometiendo un error.",
 
 // CLASES PASIVAS (25-48)
     //Heir
@@ -56,12 +56,12 @@ const misPreguntas = [
     //Seer
     "Tengo una facilidad natural para conectar puntos que otros ignoran y entender las reglas no escritas de cualquier entorno.", "Mi satisfacción no viene de ejecutar la acción, sino de saber que el éxito fue posible gracias a mi lectura de la situación.", "Tengo una capacidad natural para ver el panorama completo cuando los demás solo ven el caos del momento.", "Me gusta recolectar datos y observar patrones antes de dar una opinión.",
     //Maid
-    "Soy la persona que siempre cumple, la que sostiene el peso y la que no deja que nada se rompa.", "No busco cuidar a otrod todo el tiempo, busco ser tan eficiente en mi labor de soporte que, al final, no necesite a nadie más para ejecutar mi propia visión del mundo.", "Tengo una capacidad natural para absorber la carga de trabajo y las responsabilidades que otros evitan.", "Mi personalidad se define por una responsabilidad inquebrantable y una capacidad de gestión que asegura que nada se desmorone.",
+    "Soy la persona que siempre cumple, la que sostiene el peso y la que no deja que nada se rompa.", "No busco cuidar a otros todo el tiempo, busco ser tan eficiente en mi labor de soporte que, al final, no necesite a nadie más para ejecutar mi propia visión del mundo.", "Tengo una capacidad natural para absorber la carga de trabajo y las responsabilidades que otros evitan.", "Mi personalidad se define por una responsabilidad inquebrantable y una capacidad de gestión que asegura que nada se desmorone.",
 // ASPECTOS (49-96)
     //Light
     "Tengo miedo a ser insignificante o irrelevante", "Me siento más seguro cuando todo está a la vista y no hay secretos o ambigüedades.", "No soporto la ignorancia ni que se me oculte la verdad.", "Creo que no existen las coincidencias, cada evento, por pequeño que sea, es una pieza clave en un esquema mayor.",
     //Void
-    "Confío en mi capacidad de resolver situaciones sin entender el proceso.", "Prefiero vivir en la duda antes que aceptar una verdad impuesta.", "Me aterra ser completamente transparente para los demás", "Siento pasión por lo que aún no existe o está oculto",
+    "Confío en mi capacidad de resolver situaciones sin entender el proceso.", "Prefiero vivir en la duda antes que aceptar una verdad impuesta.", "Me aterra ser completamente transparente para los demás.", "Siento pasión por lo que aún no existe o está oculto.",
     //Breath
     "Me asfixia que otros intenten dictar mi camino.", "Me gusta la idea de cambiar de rumbo en cualquier momento.", "Tiendo a desconectarme de las emociones en general, ya sean las mías o las de los demás.", "Me aterra no poder hacer lo que quiera.",
     //Blood
@@ -73,7 +73,7 @@ const misPreguntas = [
     //Rage
     "Acepto mis emociones negativas como partes esenciales de mi identidad.", "Mi mayor temor es convertirme en un seguidor complaciente que ha dejado de cuestionar la realidad.", "Cuestiono por naturaleza cualquier autoridad o sistema establecido.", "Prefiero una verdad dolorosa y destructiva antes que una mentira reconfortante que mantenga una estabilidad falsa.",
     //Hope
-    "Me aterra descubrir que mis sueños eran solo fantasías sin peso real.", "Pregunta 2 para HOPE", "Me guía lo que considero que es correcto y justo, incluso si es fantasioso.", "Creo firmemente que la confianza a sí mismo es el mayor poder.",
+    "Me aterra descubrir que mis sueños eran solo fantasías sin peso real.", "Mi mayor fortaleza es mi capacidad para creer en algo incluso cuando todo el mundo dice que es imposible.", "Me guía lo que considero que es correcto y justo, incluso si es fantasioso.", "Creo firmemente que la confianza a sí mismo es el mayor poder.",
     //Life
     "La idea de conformarme con lo que tengo me parece una forma de derrota.", "Mi prioridad es la búsqueda constante de una vida más abundante.", "Me genera un rechazo profundo la idea de vivir en la escasez.", "Tiendo a evaluar las situaciones basándome en el beneficio tangible que pueden aportar.",
     //Doom
